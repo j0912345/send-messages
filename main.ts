@@ -7,7 +7,7 @@ function send_message (message: string) {
     radio.sendMessage(RadioMessage.addSpaceForNewMessage)
     for (let index = 0; index <= message.length; index++) {
         radio.sendString(message.charAt(index))
-        basic.pause(1000)
+        basic.pause(10)
     }
     radio.sendMessage(RadioMessage.remove_light)
 }
@@ -32,5 +32,5 @@ radio.onReceivedMessage(RadioMessage.addSpaceForNewMessage, function () {
 let message_store: string[] = []
 let your_message = ""
 // type your message here!
-your_message = "m1"
+your_message = "hello everyone!"
 radio.setGroup(164)
